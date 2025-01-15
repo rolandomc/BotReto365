@@ -6,7 +6,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Cargar token del bot
-BOT_TOKEN = os.getenv("7773547401:AAFbfyH5doKpoQy3W02cjDYKr775uhZmcYg")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 # Archivo para guardar los datos
 DATA_FILE = "ahorro_data.json"
