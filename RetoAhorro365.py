@@ -2,7 +2,7 @@ import json
 import random
 import os
 from datetime import datetime
-from telegram import Update
+from telegram import Updater
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
 # Cargar token del bot
