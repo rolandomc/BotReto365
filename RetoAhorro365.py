@@ -9,6 +9,11 @@ import asyncio
 # Cargar token del bot
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+if not BOT_TOKEN:
+    print("Error: BOT_TOKEN no está configurado.")
+else:
+    print("BOT_TOKEN cargado correctamente.")
+
 # Archivo para guardar los datos
 DATA_FILE = "ahorro_data.json"
 
@@ -66,6 +71,7 @@ async def ver_acumulado(update: Update, context: CallbackContext):
 
 # Configurar el bot
 async def main():
+    # Crea la aplicación usando el token
     application = Application.builder().token(BOT_TOKEN).build()
 
     # Añadir comandos
