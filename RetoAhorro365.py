@@ -1,7 +1,6 @@
 import json
 import random
 import os
-from datetime import datetime
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
 
@@ -64,7 +63,7 @@ async def ver_acumulado(update: Update, context: CallbackContext):
     await update.message.reply_text(f"El acumulado actual es: ${datos['acumulado']}.")
 
 # Configurar el bot
-def main():
+async def main():
     application = Application.builder().token(BOT_TOKEN).build()
 
     # Añadir comandos
@@ -73,7 +72,8 @@ def main():
     application.add_handler(CommandHandler("acumulado", ver_acumulado))
 
     # Iniciar el bot
-    application.run_polling()
+    await application.run_polling()
 
 if __name__ == "__main__":
-    main()
+    import asyncio
+    asyncio.run(main())
