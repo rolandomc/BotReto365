@@ -2,7 +2,7 @@ import json
 import random
 import os
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
+from telegram.ext import Application, CommandHandler, CallbackContext
 
 # Cargar token del bot
 BOT_TOKEN = os.getenv("BOT_TOKEN")
