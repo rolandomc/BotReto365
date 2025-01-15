@@ -1,8 +1,10 @@
 import json
 import random
 import os
+from datetime import datetime
 from telegram import Update
 from telegram.ext import Application, CommandHandler, CallbackContext
+import asyncio
 
 # Cargar token del bot
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -75,5 +77,4 @@ async def main():
     await application.run_polling()
 
 if __name__ == "__main__":
-    import asyncio
     asyncio.run(main())
