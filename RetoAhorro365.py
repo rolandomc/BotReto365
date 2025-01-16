@@ -3,7 +3,7 @@ import random
 import os
 from datetime import datetime
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, CallbackContext
+from telegram.ext import Application, CommandHandler, CallbackContext
 import asyncio
 
 # Cargar token del bot
@@ -66,7 +66,7 @@ async def ver_acumulado(update: Update, context: CallbackContext):
 
 # Configurar el bot
 async def main():
-    application = ApplicationBuilder().token(BOT_TOKEN).build()
+    application = Application.builder().token(BOT_TOKEN).build()
 
     # Añadir comandos
     application.add_handler(CommandHandler("generar", generar_numero))
